@@ -24,12 +24,7 @@ nav {
 .section {
     min-height: 100vh;
     padding: 120px 10%;
-    display: none;
     position: relative;
-}
-
-.section.active { 
-    display: block; 
 }
 
 /* Hero Section & Background Motion */
@@ -363,6 +358,7 @@ nav a:hover,
   }
 
 }
+
 
 
 
