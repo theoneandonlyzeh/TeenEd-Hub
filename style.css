@@ -251,3 +251,10 @@ nav a:hover,
     text-align: center;
 }
 
+.about-card h2,
+.about-card h3,
+.about-card p {
+    text-align: center;
+}
+
+
