@@ -264,6 +264,105 @@ nav a:hover,
     align-items: center;       /* vertical center */
     text-align: center;        /* center text */
 }
+/* ============================= */
+/* 📱 RESPONSIVE DESIGN SYSTEM  */
+/* ============================= */
+
+@media (max-width: 1024px) {
+
+  .section {
+    padding: 100px 8%;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .home-description {
+    margin-top: 60px;
+    padding: 25px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  /* NAV STACK */
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* SECTION SPACING */
+  .section {
+    padding: 80px 6%;
+  }
+
+  /* HERO TEXT SCALE */
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  /* BUTTON STACK */
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* CARD WIDTH CONTROL */
+  .card {
+    max-width: 100%;
+  }
+
+  .home-description {
+    max-width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .section {
+    padding: 70px 5%;
+  }
+
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .home-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+}
 
 
 
