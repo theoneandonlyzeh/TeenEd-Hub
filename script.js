@@ -1,46 +1,53 @@
-function showSection(id) {
-  var sections = document.querySelectorAll(".section");
-  var current = null;
+// ================================
+// HASH ROUTING SYSTEM
+// ================================
 
-  sections.forEach(function(section) {
-    if (section.style.display === "block") {
-      current = section;
-    }
+function showSection(id) {
+  const sections = document.querySelectorAll(".section");
+
+  sections.forEach(section => {
+    section.classList.remove("active", "visible");
+    section.style.display = "none";
   });
 
-  if (current) {
-    current.classList.remove("visible");
+  const target = document.getElementById(id);
+
+  if (target) {
+    target.style.display = "block";
+
+    setTimeout(() => {
+      target.classList.add("active", "visible");
+    }, 20);
+
+    window.scrollTo(0, 0);
   }
-
-  setTimeout(function() {
-
-    sections.forEach(function(section) {
-      section.style.display = "none";
-      section.classList.remove("active");
-      section.classList.remove("visible");
-    });
-
-    var target = document.getElementById(id);
-
-    if (target) {
-      target.style.display = "block";
-
-      setTimeout(function() {
-        target.classList.add("active");
-        target.classList.add("visible");
-      }, 20);
-
-      window.scrollTo(0, 0);
-    }
-
-  }, 300);
 }
 
-window.onload = function() {
-  var home = document.getElementById("home");
-  home.style.display = "block";
-  setTimeout(function() {
-    home.classList.add("active");
-    home.classList.add("visible");
-  }, 20);
-};
+
+// ================================
+// HANDLE URL HASH CHANGES
+// ================================
+
+function handleRouting() {
+  let hash = window.location.hash.replace("#", "");
+
+  if (!hash) {
+    hash = "home";
+  }
+
+  showSection(hash);
+}
+
+
+// ================================
+// INITIAL LOAD
+// ================================
+
+window.addEventListener("load", handleRouting);
+
+
+// ================================
+// BACK / FORWARD BUTTON SUPPORT
+// ================================
+
+window.addEventListener("hashchange", handleRouting);
