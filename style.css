@@ -247,4 +247,7 @@ nav a:hover,
 .section.visible {
   opacity: 1;
 }
+.about-card {
+    text-align: center;
+}
 
