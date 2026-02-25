@@ -349,6 +349,24 @@ nav a:hover,
   }
 
 }
+/* ============================= */
+/* ✨ TYPOGRAPHY SPACING SYSTEM  */
+/* ============================= */
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
 
 
 
