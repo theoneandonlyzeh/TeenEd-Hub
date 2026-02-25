@@ -1,0 +1,248 @@
+/* Global Reset & Base Styles */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+body {
+    background: #0e0e11;
+    color: #f2f2f2;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    background: #111;
+    justify-content: space-between;
+}
+
+/* Section Logic */
+.section {
+    min-height: 100vh;
+    padding: 120px 10%;
+    display: none;
+    position: relative;
+}
+
+.section.active { 
+    display: block; 
+}
+
+/* Hero Section & Background Motion */
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, #8f8adf33, #0e0e11 60%);
+}
+
+.hero-motion {
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(199,191,255,0.28), transparent 60%),
+    radial-gradient(circle at 75% 65%, rgba(120,110,255,0.22), transparent 65%),
+    radial-gradient(circle at 50% 80%, rgba(95,92,255,0.18), transparent 60%);
+  filter: blur(130px);
+  animation: auroraFlow 28s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.title {
+    font-size: 3.5rem;
+}
+
+.tagline {
+    margin-top: 10px;
+    color: #8f8adf;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    background: transparent;
+    border: none;
+    color: #8f8adf;
+    cursor: pointer;
+    transition: 
+        background 0.3s ease, 
+        color 0.3s ease, 
+        box-shadow 0.3s ease, 
+        transform 0.2s ease;
+}
+
+.hero-buttons button {
+    border: 1px solid #8f8adf;
+}
+
+button:hover {
+    background: #8f8adf;
+    color: #0e0e11;
+    box-shadow: 0 0 18px rgba(199,191,255,0.85);
+    transform: translateY(-1px);
+}
+
+/* Layout Components */
+.home-description {
+    margin-top: 90px;
+    max-width: 850px;
+    margin-inline: auto;
+    padding: 30px 35px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 18px;
+    line-height: 1.7;
+}
+
+.card {
+    background: #1a1a22;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow:
+        0 0 0 1px rgba(199,191,255,0.08),
+        0 0 22px rgba(95,92,255,0.18);
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow:
+        0 0 0 1px rgba(199,191,255,0.18),
+        0 0 35px rgba(95,92,255,0.35);
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0b0b0f;
+}
+
+@keyframes auroraFlow {
+  0% {
+    transform: translate(0%, 0%) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(-8%, 6%) scale(1.05) rotate(1deg);
+  }
+  50% {
+    transform: translate(6%, -10%) scale(1.08) rotate(-1deg);
+  }
+  75% {
+    transform: translate(-4%, 8%) scale(1.04) rotate(0.5deg);
+  }
+  100% {
+    transform: translate(4%, -6%) scale(1.1) rotate(-0.5deg);
+  }
+}
+
+/* === CINEMATIC LAYERED HERO REVEAL (RESTORED) === */
+
+.section .title,
+.section .tagline,
+.section .hero-buttons,
+.section .home-description {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(8px);
+}
+
+.section.active .title {
+  animation: reveal 1.2s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.section.active .tagline {
+  animation: reveal 1.2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.section.active .hero-buttons {
+  animation: reveal 1.2s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.section.active .home-description {
+  animation: reveal 1.2s ease forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.section:not(#home) {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(143,138,223,0.08), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(95,92,255,0.06), transparent 65%);
+    background-size: 200% 200%;
+    animation: sectionGlow 20s ease-in-out infinite;
+}
+
+@keyframes sectionGlow {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+/* === FIX FOR LINK NAV & HERO BUTTONS (MATCH ORIGINAL BUTTON STYLE) === */
+
+nav a,
+.hero-buttons a {
+  padding: 12px 25px;
+  background: transparent;
+  border: none;
+  color: #8f8adf;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* Restore hero border */
+.hero-buttons a {
+  border: 1px solid #8f8adf;
+}
+
+/* Hover glow */
+nav a:hover,
+.hero-buttons a:hover {
+  background: #8f8adf;
+  color: #0e0e11;
+  box-shadow: 0 0 18px rgba(199,191,255,0.85);
+  transform: translateY(-1px);
+}
+/* === PAGE FADE TRANSITION === */
+
+.section {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.section.visible {
+  opacity: 1;
+}
