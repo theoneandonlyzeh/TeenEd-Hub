@@ -23,10 +23,11 @@ nav {
 /* Section Logic */
 .section {
     min-height: 100vh;
-    padding: 120px 10%;
+    padding: 120px 20px;   /* instead of 10% */
+    max-width: 1200px;     /* control content width */
+    margin: 0 auto;        /* center everything */
     position: relative;
 }
-
 /* Hero Section & Background Motion */
 .hero {
     position: relative;
@@ -53,6 +54,8 @@ nav {
     position: relative;
     z-index: 2;
     text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .title {
@@ -346,6 +349,7 @@ nav a:hover,
   }
 
 }
+
 
 
 
