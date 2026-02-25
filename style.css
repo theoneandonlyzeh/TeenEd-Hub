@@ -120,7 +120,10 @@ button:hover {
         0 0 0 1px rgba(199,191,255,0.08),
         0 0 22px rgba(95,92,255,0.18);
     transition: box-shadow 0.4s ease, transform 0.3s ease;
-    text-align: center; /* <-- THIS IS THE ONLY ADDITION */
+
+    max-width: 900px;        /* limit width */
+    margin: 0 auto;          /* center the card */
+    text-align: center;      /* center the text */
 }
 
 .card:hover {
@@ -247,14 +250,7 @@ nav a:hover,
 .section.visible {
   opacity: 1;
 }
-.about-card {
-    text-align: center;
-}
 
-.about-card h2,
-.about-card h3,
-.about-card p {
-    text-align: center;
-}
+
 
 
