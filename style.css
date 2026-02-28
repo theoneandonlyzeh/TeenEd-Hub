@@ -511,6 +511,9 @@ nav a.active {
   border-bottom: 2px solid #c6b7ff;
   padding-bottom: 4px;
 }
+nav a {
+  transition: all 0.3s ease;
+}
 
 
 
