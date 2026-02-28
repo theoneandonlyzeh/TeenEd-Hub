@@ -505,6 +505,12 @@ p {
   background: #8f8adf;
   color: #0e0e11;
 }
+/* Active Navigation Link */
+nav a.active {
+  color: #c6b7ff;
+  border-bottom: 2px solid #c6b7ff;
+  padding-bottom: 4px;
+}
 
 
 
