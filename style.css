@@ -1,3 +1,6 @@
+:root {
+  --accent-color: #b8a9ff;
+}
 /* Global Reset & Base Styles */
 * { 
     margin: 0; 
@@ -505,16 +508,14 @@ p {
   background: #8f8adf;
   color: #0e0e11;
 }
-/* Active Navigation Link */
 nav a.active {
-  color: #c6b7ff;
-  border-bottom: 2px solid #c6b7ff;
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
   padding-bottom: 4px;
 }
-nav a {
-  transition: all 0.3s ease;
+nav a:hover {
+  color: var(--accent-color);
 }
-
 
 
 
