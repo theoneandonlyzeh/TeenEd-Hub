@@ -23,11 +23,13 @@ nav {
 /* Section Logic */
 .section {
     min-height: 100vh;
-    padding: 120px 20px;   /* instead of 10% */
-    max-width: 1200px;     /* control content width */
-    margin: 0 auto;        /* center everything */
+    padding: 120px 10%;
     position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 0;
 }
+
 /* Hero Section & Background Motion */
 .hero {
     position: relative;
@@ -367,6 +369,7 @@ p {
   margin-bottom: 15px;
   line-height: 1.7;
 }
+
 
 
 
