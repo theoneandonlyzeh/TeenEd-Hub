@@ -675,6 +675,217 @@ nav a:hover {
   font-size: 0.85rem;
   border-radius: 20px;
 }
+/* ================================= */
+/* 🚀 MATHS PAGE FINAL POLISH SYSTEM */
+/* ================================= */
+
+/* Layout Override */
+.maths-page {
+  display: block !important;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.maths-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Title */
+.maths-page h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.subject-tagline {
+  text-align: center;
+  color: #8f8adf;
+  margin-bottom: 15px;
+}
+
+.chapter-count {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-bottom: 60px;
+}
+
+/* Unit Title */
+.unit-title {
+  margin-top: 80px;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  color: #8f8adf;
+  border-left: 3px solid #8f8adf;
+  padding-left: 12px;
+  position: relative;
+}
+
+/* Divider Line */
+.unit-title:not(:first-of-type) {
+  padding-top: 50px;
+}
+
+.unit-title:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(143,138,223,0.5),
+    transparent
+  );
+}
+
+/* Unit Description */
+.unit-desc {
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  opacity: 0.65;
+  padding-left: 15px;
+}
+
+/* Chapter Numbering */
+.contents {
+  counter-reset: chapter;
+}
+
+.chapter-card {
+  counter-increment: chapter;
+  position: relative;
+}
+
+/* Left Progress Indicator Bar */
+.chapter-card::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: rgba(143,138,223,0.2);
+  transition: 0.3s ease;
+}
+
+.chapter-card:hover::before {
+  background: #8f8adf;
+}
+
+/* Card */
+.chapter-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a22;
+  padding: 22px 25px;
+  border-radius: 15px;
+  margin-bottom: 18px;
+
+  box-shadow:
+    0 0 0 1px rgba(199,191,255,0.08),
+    0 0 22px rgba(95,92,255,0.18);
+
+  transition: 0.35s ease;
+}
+
+.chapter-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(199,191,255,0.18),
+    0 0 35px rgba(95,92,255,0.35);
+}
+
+/* Auto Number */
+.chapter-text h3::before {
+  content: counter(chapter) ". ";
+  color: #8f8adf;
+  font-weight: 600;
+}
+
+/* Chapter Text */
+.chapter-text h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.chapter-text p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* Explore Button */
+.chapter-card a {
+  border: 1px solid #8f8adf;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: #8f8adf;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.chapter-card a:hover {
+  background: #8f8adf;
+  color: #0e0e11;
+}
+
+/* Difficulty Tags */
+.difficulty {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.foundation {
+  background: rgba(143,138,223,0.15);
+  color: #8f8adf;
+}
+
+.intermediate {
+  background: rgba(95,92,255,0.15);
+  color: #9f9cff;
+}
+
+.advanced {
+  background: rgba(199,191,255,0.2);
+  color: #cfc8ff;
+}
+
+/* Fade Animation */
+.chapter-card,
+.unit-title,
+.unit-desc {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .chapter-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .chapter-card a {
+    align-self: flex-start;
+  }
+}
 
 
 
